@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "announcements",
+  "info": {
+    "singularName": "announcement",
+    "pluralName": "announcements",
+    "displayName": "Announcement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "reference": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "required": true
+    },
+    "industry": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::industry.industry",
+      "inversedBy": "announcements"
+    },
+    "Illustration": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Prix": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger",
+      "min": "100000"
+    },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "Localisation": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Dakar",
+        "Guédiawaye",
+        "Pikine",
+        "Bargny",
+        "Rufisque",
+        "Sébikotane",
+        "Bambey",
+        "Diourbel",
+        "Mbacké",
+        "Diofior",
+        "Fatick",
+        "Foundiougne",
+        "Sokone",
+        "Passi",
+        "Gossas",
+        "Guinguinéo",
+        "Kahone",
+        "Kaffrine",
+        "Koungheul",
+        "Kaolack",
+        "Gandiaye",
+        "Ndoffane",
+        "Nioro"
+      ]
+    },
+    "chiffreAffaire": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger"
+    }
+  }
+}
