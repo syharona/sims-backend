@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "announcement_submissions",
+  "info": {
+    "singularName": "announcement-submission",
+    "pluralName": "announcement-submissions",
+    "displayName": "Announcement Submission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "createDate": {
+      "type": "date"
+    },
+    "industry": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::industry.industry",
+      "inversedBy": "announcement_submissions"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "motif": {
+      "type": "text"
+    },
+    "numEmployees": {
+      "type": "biginteger"
+    }
+  }
+}
