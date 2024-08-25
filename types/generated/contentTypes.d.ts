@@ -775,15 +775,15 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToOne',
       'api::wishlist.wishlist'
     >;
+    announcement_submissions: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::announcement-submission.announcement-submission'
+    >;
     interested_user: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToOne',
       'api::interest-form-submission.interest-form-submission'
-    >;
-    announcementSubmitted: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::announcement-submission.announcement-submission'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -942,11 +942,6 @@ export interface ApiAnnouncementSubmissionAnnouncementSubmission
     price: Attribute.BigInteger;
     motif: Attribute.Text;
     numEmployees: Attribute.BigInteger;
-    cedantBio: Attribute.Relation<
-      'api::announcement-submission.announcement-submission',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
