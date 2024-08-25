@@ -33,6 +33,12 @@
     },
     "numEmployees": {
       "type": "biginteger"
+    },
+    "cedantBio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "announcementSubmitted"
     }
   }
 }
