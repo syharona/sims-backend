@@ -831,14 +831,14 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
       'manyToOne',
       'api::industry.industry'
     >;
-    Illustration: Attribute.Media &
+    illustration: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Prix: Attribute.BigInteger &
+    prix: Attribute.BigInteger &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -850,14 +850,14 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
         },
         string
       >;
-    Description: Attribute.Text &
+    description: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Localisation: Attribute.Enumeration<
+    localisation: Attribute.Enumeration<
       [
         'Dakar',
         'Gu\u00E9diawaye',

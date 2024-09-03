@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-08-25T02:13:50.985Z"
+    "x-generation-date": "2024-09-03T22:43:07.417Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -89,8 +89,8 @@
       "AnnouncementLocalizationRequest": {
         "required": [
           "reference",
-          "Illustration",
-          "Description",
+          "illustration",
+          "description",
           "locale"
         ],
         "type": "object",
@@ -109,7 +109,7 @@
             ],
             "example": "string or id"
           },
-          "Illustration": {
+          "illustration": {
             "oneOf": [
               {
                 "type": "integer"
@@ -120,15 +120,15 @@
             ],
             "example": "string or id"
           },
-          "Prix": {
+          "prix": {
             "type": "string",
             "pattern": "^\\d*$",
             "example": "123456789"
           },
-          "Description": {
+          "description": {
             "type": "string"
           },
-          "Localisation": {
+          "localisation": {
             "type": "string",
             "enum": [
               "Dakar",
@@ -175,8 +175,8 @@
           "data": {
             "required": [
               "reference",
-              "Illustration",
-              "Description"
+              "illustration",
+              "description"
             ],
             "type": "object",
             "properties": {
@@ -194,7 +194,7 @@
                 ],
                 "example": "string or id"
               },
-              "Illustration": {
+              "illustration": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -205,15 +205,15 @@
                 ],
                 "example": "string or id"
               },
-              "Prix": {
+              "prix": {
                 "type": "string",
                 "pattern": "^\\d*$",
                 "example": "123456789"
               },
-              "Description": {
+              "description": {
                 "type": "string"
               },
-              "Localisation": {
+              "localisation": {
                 "type": "string",
                 "enum": [
                   "Dakar",
@@ -371,8 +371,8 @@
         "type": "object",
         "required": [
           "reference",
-          "Illustration",
-          "Description"
+          "illustration",
+          "description"
         ],
         "properties": {
           "reference": {
@@ -783,7 +783,7 @@
                                         }
                                       }
                                     },
-                                    "Illustration": {
+                                    "illustration": {
                                       "type": "object",
                                       "properties": {
                                         "data": {
@@ -1153,15 +1153,15 @@
                                         }
                                       }
                                     },
-                                    "Prix": {
+                                    "prix": {
                                       "type": "string",
                                       "pattern": "^\\d*$",
                                       "example": "123456789"
                                     },
-                                    "Description": {
+                                    "description": {
                                       "type": "string"
                                     },
-                                    "Localisation": {
+                                    "localisation": {
                                       "type": "string",
                                       "enum": [
                                         "Dakar",
@@ -1323,7 +1323,7 @@
               }
             }
           },
-          "Illustration": {
+          "illustration": {
             "type": "object",
             "properties": {
               "data": {
@@ -1462,15 +1462,15 @@
               }
             }
           },
-          "Prix": {
+          "prix": {
             "type": "string",
             "pattern": "^\\d*$",
             "example": "123456789"
           },
-          "Description": {
+          "description": {
             "type": "string"
           },
-          "Localisation": {
+          "localisation": {
             "type": "string",
             "enum": [
               "Dakar",
@@ -2098,7 +2098,7 @@
                                         }
                                       }
                                     },
-                                    "Illustration": {
+                                    "illustration": {
                                       "type": "object",
                                       "properties": {
                                         "data": {
@@ -2468,15 +2468,15 @@
                                         }
                                       }
                                     },
-                                    "Prix": {
+                                    "prix": {
                                       "type": "string",
                                       "pattern": "^\\d*$",
                                       "example": "123456789"
                                     },
-                                    "Description": {
+                                    "description": {
                                       "type": "string"
                                     },
-                                    "Localisation": {
+                                    "localisation": {
                                       "type": "string",
                                       "enum": [
                                         "Dakar",
@@ -11392,7 +11392,7 @@
                                                       }
                                                     }
                                                   },
-                                                  "Illustration": {
+                                                  "illustration": {
                                                     "type": "object",
                                                     "properties": {
                                                       "data": {
@@ -12014,15 +12014,15 @@
                                                       }
                                                     }
                                                   },
-                                                  "Prix": {
+                                                  "prix": {
                                                     "type": "string",
                                                     "pattern": "^\\d*$",
                                                     "example": "123456789"
                                                   },
-                                                  "Description": {
+                                                  "description": {
                                                     "type": "string"
                                                   },
-                                                  "Localisation": {
+                                                  "localisation": {
                                                     "type": "string",
                                                     "enum": [
                                                       "Dakar",
@@ -12948,7 +12948,7 @@
                           }
                         }
                       },
-                      "Illustration": {
+                      "illustration": {
                         "type": "object",
                         "properties": {
                           "data": {
@@ -13318,15 +13318,15 @@
                           }
                         }
                       },
-                      "Prix": {
+                      "prix": {
                         "type": "string",
                         "pattern": "^\\d*$",
                         "example": "123456789"
                       },
-                      "Description": {
+                      "description": {
                         "type": "string"
                       },
-                      "Localisation": {
+                      "localisation": {
                         "type": "string",
                         "enum": [
                           "Dakar",
@@ -17641,7 +17641,7 @@
                             }
                           }
                         },
-                        "Illustration": {
+                        "illustration": {
                           "type": "object",
                           "properties": {
                             "data": {
@@ -18011,15 +18011,15 @@
                             }
                           }
                         },
-                        "Prix": {
+                        "prix": {
                           "type": "string",
                           "pattern": "^\\d*$",
                           "example": "123456789"
                         },
-                        "Description": {
+                        "description": {
                           "type": "string"
                         },
-                        "Localisation": {
+                        "localisation": {
                           "type": "string",
                           "enum": [
                             "Dakar",

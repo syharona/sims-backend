@@ -31,7 +31,7 @@
       "target": "api::industry.industry",
       "inversedBy": "announcements"
     },
-    "Illustration": {
+    "illustration": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -44,7 +44,7 @@
         }
       }
     },
-    "Prix": {
+    "prix": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -53,7 +53,7 @@
       "type": "biginteger",
       "min": "100000"
     },
-    "Description": {
+    "description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -62,7 +62,7 @@
       "type": "text",
       "required": true
     },
-    "Localisation": {
+    "localisation": {
       "pluginOptions": {
         "i18n": {
           "localized": true

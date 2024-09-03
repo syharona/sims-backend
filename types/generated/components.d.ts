@@ -305,8 +305,8 @@ export interface SectionsHeading extends Schema.Component {
     displayName: 'Heading';
   };
   attributes: {
-    heading: Attribute.String & Attribute.Required;
-    description: Attribute.String;
+    heading: Attribute.Text & Attribute.Required;
+    description: Attribute.Text;
   };
 }
 
