@@ -933,15 +933,18 @@ export interface ApiAnnouncementSubmissionAnnouncementSubmission
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    createDate: Attribute.Date;
+    createDate: Attribute.Date & Attribute.Required;
     industry: Attribute.Relation<
       'api::announcement-submission.announcement-submission',
       'manyToOne',
       'api::industry.industry'
     >;
     price: Attribute.BigInteger;
-    motif: Attribute.Text;
     numEmployees: Attribute.BigInteger;
+    address: Attribute.Text;
+    salePrice: Attribute.BigInteger;
+    reason: Attribute.Text;
+    numEmployee: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

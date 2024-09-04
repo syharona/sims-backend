@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-09-03T22:43:07.417Z"
+    "x-generation-date": "2024-09-04T18:26:55.618Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -436,13 +436,24 @@
                                       "pattern": "^\\d*$",
                                       "example": "123456789"
                                     },
-                                    "motif": {
-                                      "type": "string"
-                                    },
                                     "numEmployees": {
                                       "type": "string",
                                       "pattern": "^\\d*$",
                                       "example": "123456789"
+                                    },
+                                    "address": {
+                                      "type": "string"
+                                    },
+                                    "salePrice": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "reason": {
+                                      "type": "string"
+                                    },
+                                    "numEmployee": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -1595,7 +1606,9 @@
         "properties": {
           "data": {
             "required": [
-              "name"
+              "name",
+              "createDate",
+              "numEmployee"
             ],
             "type": "object",
             "properties": {
@@ -1622,13 +1635,24 @@
                 "pattern": "^\\d*$",
                 "example": "123456789"
               },
-              "motif": {
-                "type": "string"
-              },
               "numEmployees": {
                 "type": "string",
                 "pattern": "^\\d*$",
                 "example": "123456789"
+              },
+              "address": {
+                "type": "string"
+              },
+              "salePrice": {
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "numEmployee": {
+                "type": "integer"
               }
             }
           }
@@ -1683,7 +1707,9 @@
       "AnnouncementSubmission": {
         "type": "object",
         "required": [
-          "name"
+          "name",
+          "createDate",
+          "numEmployee"
         ],
         "properties": {
           "name": {
@@ -1751,13 +1777,24 @@
                                       "pattern": "^\\d*$",
                                       "example": "123456789"
                                     },
-                                    "motif": {
-                                      "type": "string"
-                                    },
                                     "numEmployees": {
                                       "type": "string",
                                       "pattern": "^\\d*$",
                                       "example": "123456789"
+                                    },
+                                    "address": {
+                                      "type": "string"
+                                    },
+                                    "salePrice": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "reason": {
+                                      "type": "string"
+                                    },
+                                    "numEmployee": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -2643,13 +2680,24 @@
             "pattern": "^\\d*$",
             "example": "123456789"
           },
-          "motif": {
-            "type": "string"
-          },
           "numEmployees": {
             "type": "string",
             "pattern": "^\\d*$",
             "example": "123456789"
+          },
+          "address": {
+            "type": "string"
+          },
+          "salePrice": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "numEmployee": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -12189,13 +12237,24 @@
                           "pattern": "^\\d*$",
                           "example": "123456789"
                         },
-                        "motif": {
-                          "type": "string"
-                        },
                         "numEmployees": {
                           "type": "string",
                           "pattern": "^\\d*$",
                           "example": "123456789"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "salePrice": {
+                          "type": "string",
+                          "pattern": "^\\d*$",
+                          "example": "123456789"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "numEmployee": {
+                          "type": "integer"
                         },
                         "createdAt": {
                           "type": "string",
@@ -12551,13 +12610,24 @@
                                                   "pattern": "^\\d*$",
                                                   "example": "123456789"
                                                 },
-                                                "motif": {
-                                                  "type": "string"
-                                                },
                                                 "numEmployees": {
                                                   "type": "string",
                                                   "pattern": "^\\d*$",
                                                   "example": "123456789"
+                                                },
+                                                "address": {
+                                                  "type": "string"
+                                                },
+                                                "salePrice": {
+                                                  "type": "string",
+                                                  "pattern": "^\\d*$",
+                                                  "example": "123456789"
+                                                },
+                                                "reason": {
+                                                  "type": "string"
+                                                },
+                                                "numEmployee": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -17244,13 +17314,24 @@
                                                     "pattern": "^\\d*$",
                                                     "example": "123456789"
                                                   },
-                                                  "motif": {
-                                                    "type": "string"
-                                                  },
                                                   "numEmployees": {
                                                     "type": "string",
                                                     "pattern": "^\\d*$",
                                                     "example": "123456789"
+                                                  },
+                                                  "address": {
+                                                    "type": "string"
+                                                  },
+                                                  "salePrice": {
+                                                    "type": "string",
+                                                    "pattern": "^\\d*$",
+                                                    "example": "123456789"
+                                                  },
+                                                  "reason": {
+                                                    "type": "string"
+                                                  },
+                                                  "numEmployee": {
+                                                    "type": "integer"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",

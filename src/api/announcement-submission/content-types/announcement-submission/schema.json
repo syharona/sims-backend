@@ -17,7 +17,8 @@
       "required": true
     },
     "createDate": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "industry": {
       "type": "relation",
@@ -28,11 +29,21 @@
     "price": {
       "type": "biginteger"
     },
-    "motif": {
-      "type": "text"
-    },
     "numEmployees": {
       "type": "biginteger"
+    },
+    "address": {
+      "type": "text"
+    },
+    "salePrice": {
+      "type": "biginteger"
+    },
+    "reason": {
+      "type": "text"
+    },
+    "numEmployee": {
+      "type": "integer",
+      "required": true
     }
   }
 }
