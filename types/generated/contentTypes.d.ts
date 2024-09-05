@@ -785,6 +785,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToOne',
       'api::interest-form-submission.interest-form-submission'
     >;
+    nom: Attribute.String;
+    prenom: Attribute.String;
+    adresse: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

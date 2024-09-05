@@ -81,6 +81,15 @@
       "relation": "oneToOne",
       "target": "api::interest-form-submission.interest-form-submission",
       "mappedBy": "users_permissions_user"
+    },
+    "nom": {
+      "type": "string"
+    },
+    "prenom": {
+      "type": "string"
+    },
+    "adresse": {
+      "type": "text"
     }
   }
 }
