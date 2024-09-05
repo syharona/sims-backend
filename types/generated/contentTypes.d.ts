@@ -787,7 +787,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     nom: Attribute.String;
     prenom: Attribute.String;
-    adresse: Attribute.Text;
+    phoneNumber: Attribute.Integer & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

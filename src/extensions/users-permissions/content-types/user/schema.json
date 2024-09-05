@@ -88,8 +88,9 @@
     "prenom": {
       "type": "string"
     },
-    "adresse": {
-      "type": "text"
+    "phoneNumber": {
+      "type": "integer",
+      "unique": true
     }
   }
 }
