@@ -948,6 +948,10 @@ export interface ApiAnnouncementSubmissionAnnouncementSubmission
     salePrice: Attribute.BigInteger;
     reason: Attribute.Text;
     numEmployee: Attribute.Integer & Attribute.Required;
+    meetingDate: Attribute.DateTime;
+    submitterName: Attribute.String;
+    email: Attribute.Email;
+    phoneNumber: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

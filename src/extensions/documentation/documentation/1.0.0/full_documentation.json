@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-09-05T23:46:27.693Z"
+    "x-generation-date": "2024-09-10T13:24:34.541Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -454,6 +454,22 @@
                                     },
                                     "numEmployee": {
                                       "type": "integer"
+                                    },
+                                    "meetingDate": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "submitterName": {
+                                      "type": "string"
+                                    },
+                                    "email": {
+                                      "type": "string",
+                                      "format": "email"
+                                    },
+                                    "phoneNumber": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -1653,6 +1669,22 @@
               },
               "numEmployee": {
                 "type": "integer"
+              },
+              "meetingDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "submitterName": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "phoneNumber": {
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
               }
             }
           }
@@ -1795,6 +1827,22 @@
                                     },
                                     "numEmployee": {
                                       "type": "integer"
+                                    },
+                                    "meetingDate": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "submitterName": {
+                                      "type": "string"
+                                    },
+                                    "email": {
+                                      "type": "string",
+                                      "format": "email"
+                                    },
+                                    "phoneNumber": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -2698,6 +2746,22 @@
           },
           "numEmployee": {
             "type": "integer"
+          },
+          "meetingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "submitterName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
           },
           "createdAt": {
             "type": "string",
@@ -12256,6 +12320,22 @@
                         "numEmployee": {
                           "type": "integer"
                         },
+                        "meetingDate": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "submitterName": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        },
+                        "phoneNumber": {
+                          "type": "string",
+                          "pattern": "^\\d*$",
+                          "example": "123456789"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -12628,6 +12708,22 @@
                                                 },
                                                 "numEmployee": {
                                                   "type": "integer"
+                                                },
+                                                "meetingDate": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "submitterName": {
+                                                  "type": "string"
+                                                },
+                                                "email": {
+                                                  "type": "string",
+                                                  "format": "email"
+                                                },
+                                                "phoneNumber": {
+                                                  "type": "string",
+                                                  "pattern": "^\\d*$",
+                                                  "example": "123456789"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -17341,6 +17437,22 @@
                                                   },
                                                   "numEmployee": {
                                                     "type": "integer"
+                                                  },
+                                                  "meetingDate": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "submitterName": {
+                                                    "type": "string"
+                                                  },
+                                                  "email": {
+                                                    "type": "string",
+                                                    "format": "email"
+                                                  },
+                                                  "phoneNumber": {
+                                                    "type": "string",
+                                                    "pattern": "^\\d*$",
+                                                    "example": "123456789"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",

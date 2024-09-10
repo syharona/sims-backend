@@ -44,6 +44,18 @@
     "numEmployee": {
       "type": "integer",
       "required": true
+    },
+    "meetingDate": {
+      "type": "datetime"
+    },
+    "submitterName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "biginteger"
     }
   }
 }
