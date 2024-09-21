@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "localisations",
+  "info": {
+    "singularName": "localisation",
+    "pluralName": "localisations",
+    "displayName": "localisation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "localisation": {
+      "type": "string"
+    }
+  }
+}
