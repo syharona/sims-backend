@@ -402,6 +402,16 @@ export interface SectionsTestimonialsGroup extends Schema.Component {
   };
 }
 
+export interface SharedDepartment extends Schema.Component {
+  collectionName: 'components_shared_departments';
+  info: {
+    displayName: 'department';
+  };
+  attributes: {
+    name: Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -508,6 +518,7 @@ declare module '@strapi/types' {
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
+      'shared.department': SharedDepartment;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

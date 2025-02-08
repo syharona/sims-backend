@@ -869,7 +869,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
     localisation: Attribute.Relation<
       'api::announcement.announcement',
       'oneToOne',
-      'api::localisation.localisation'
+      'api::location.location'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1292,12 +1292,18 @@ export interface ApiLocalisationLocalisation extends Schema.CollectionType {
     singularName: 'localisation';
     pluralName: 'localisations';
     displayName: 'localisation';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    localisation: Attribute.String;
+    region: Attribute.String;
+    departements: Attribute.Relation<
+      'api::localisation.localisation',
+      'oneToMany',
+      'api::location.location'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1309,6 +1315,37 @@ export interface ApiLocalisationLocalisation extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::localisation.localisation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLocationLocation extends Schema.CollectionType {
+  collectionName: 'locations';
+  info: {
+    singularName: 'location';
+    pluralName: 'locations';
+    displayName: 'locations';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    location: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::location.location',
       'oneToOne',
       'admin::user'
     > &
@@ -1499,6 +1536,7 @@ declare module '@strapi/types' {
       'api::interest-form-submission.interest-form-submission': ApiInterestFormSubmissionInterestFormSubmission;
       'api::lead-form-submission.lead-form-submission': ApiLeadFormSubmissionLeadFormSubmission;
       'api::localisation.localisation': ApiLocalisationLocalisation;
+      'api::location.location': ApiLocationLocation;
       'api::page.page': ApiPagePage;
       'api::product-feature.product-feature': ApiProductFeatureProductFeature;
       'api::wishlist.wishlist': ApiWishlistWishlist;

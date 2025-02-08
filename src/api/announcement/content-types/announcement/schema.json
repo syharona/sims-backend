@@ -73,7 +73,7 @@
     "localisation": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::localisation.localisation"
+      "target": "api::location.location"
     }
   }
 }

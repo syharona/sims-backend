@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_departments",
+  "info": {
+    "displayName": "department"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
