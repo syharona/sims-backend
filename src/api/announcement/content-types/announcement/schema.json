@@ -31,7 +31,7 @@
       "target": "api::industry.industry",
       "inversedBy": "announcements"
     },
-    "Illustration": {
+    "illustration": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -44,7 +44,7 @@
         }
       }
     },
-    "Prix": {
+    "prix": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -53,7 +53,7 @@
       "type": "biginteger",
       "min": "100000"
     },
-    "Description": {
+    "description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -62,39 +62,6 @@
       "type": "text",
       "required": true
     },
-    "Localisation": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Dakar",
-        "Guédiawaye",
-        "Pikine",
-        "Bargny",
-        "Rufisque",
-        "Sébikotane",
-        "Bambey",
-        "Diourbel",
-        "Mbacké",
-        "Diofior",
-        "Fatick",
-        "Foundiougne",
-        "Sokone",
-        "Passi",
-        "Gossas",
-        "Guinguinéo",
-        "Kahone",
-        "Kaffrine",
-        "Koungheul",
-        "Kaolack",
-        "Gandiaye",
-        "Ndoffane",
-        "Nioro"
-      ]
-    },
     "chiffreAffaire": {
       "pluginOptions": {
         "i18n": {
@@ -102,6 +69,11 @@
         }
       },
       "type": "biginteger"
+    },
+    "localisation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::localisation.localisation"
     }
   }
 }

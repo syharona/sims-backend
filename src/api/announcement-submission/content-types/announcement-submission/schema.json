@@ -17,7 +17,8 @@
       "required": true
     },
     "createDate": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "industry": {
       "type": "relation",
@@ -28,10 +29,32 @@
     "price": {
       "type": "biginteger"
     },
-    "motif": {
+    "numEmployees": {
+      "type": "biginteger"
+    },
+    "address": {
       "type": "text"
     },
-    "numEmployees": {
+    "salePrice": {
+      "type": "biginteger"
+    },
+    "reason": {
+      "type": "text"
+    },
+    "numEmployee": {
+      "type": "integer",
+      "required": true
+    },
+    "meetingDate": {
+      "type": "datetime"
+    },
+    "submitterName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
       "type": "biginteger"
     }
   }

@@ -785,6 +785,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToOne',
       'api::interest-form-submission.interest-form-submission'
     >;
+    nom: Attribute.String;
+    prenom: Attribute.String;
+    phoneNumber: Attribute.Integer & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -831,14 +834,14 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
       'manyToOne',
       'api::industry.industry'
     >;
-    Illustration: Attribute.Media &
+    illustration: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Prix: Attribute.BigInteger &
+    prix: Attribute.BigInteger &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -850,40 +853,8 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
         },
         string
       >;
-    Description: Attribute.Text &
+    description: Attribute.Text &
       Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Localisation: Attribute.Enumeration<
-      [
-        'Dakar',
-        'Gu\u00E9diawaye',
-        'Pikine',
-        'Bargny',
-        'Rufisque',
-        'S\u00E9bikotane',
-        'Bambey',
-        'Diourbel',
-        'Mback\u00E9',
-        'Diofior',
-        'Fatick',
-        'Foundiougne',
-        'Sokone',
-        'Passi',
-        'Gossas',
-        'Guinguin\u00E9o',
-        'Kahone',
-        'Kaffrine',
-        'Koungheul',
-        'Kaolack',
-        'Gandiaye',
-        'Ndoffane',
-        'Nioro'
-      ]
-    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -895,6 +866,11 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    localisation: Attribute.Relation<
+      'api::announcement.announcement',
+      'oneToOne',
+      'api::localisation.localisation'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -933,15 +909,22 @@ export interface ApiAnnouncementSubmissionAnnouncementSubmission
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    createDate: Attribute.Date;
+    createDate: Attribute.Date & Attribute.Required;
     industry: Attribute.Relation<
       'api::announcement-submission.announcement-submission',
       'manyToOne',
       'api::industry.industry'
     >;
     price: Attribute.BigInteger;
-    motif: Attribute.Text;
     numEmployees: Attribute.BigInteger;
+    address: Attribute.Text;
+    salePrice: Attribute.BigInteger;
+    reason: Attribute.Text;
+    numEmployee: Attribute.Integer & Attribute.Required;
+    meetingDate: Attribute.DateTime;
+    submitterName: Attribute.String;
+    email: Attribute.Email;
+    phoneNumber: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1303,6 +1286,36 @@ export interface ApiLeadFormSubmissionLeadFormSubmission
   };
 }
 
+export interface ApiLocalisationLocalisation extends Schema.CollectionType {
+  collectionName: 'localisations';
+  info: {
+    singularName: 'localisation';
+    pluralName: 'localisations';
+    displayName: 'localisation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    localisation: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::localisation.localisation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::localisation.localisation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -1485,6 +1498,7 @@ declare module '@strapi/types' {
       'api::industry.industry': ApiIndustryIndustry;
       'api::interest-form-submission.interest-form-submission': ApiInterestFormSubmissionInterestFormSubmission;
       'api::lead-form-submission.lead-form-submission': ApiLeadFormSubmissionLeadFormSubmission;
+      'api::localisation.localisation': ApiLocalisationLocalisation;
       'api::page.page': ApiPagePage;
       'api::product-feature.product-feature': ApiProductFeatureProductFeature;
       'api::wishlist.wishlist': ApiWishlistWishlist;
