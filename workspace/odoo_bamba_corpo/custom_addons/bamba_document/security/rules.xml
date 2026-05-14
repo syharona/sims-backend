@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+
+    <!-- EMPLOYÉ -->
+    <record id="rule_document_employee" model="ir.rule">
+      <field name="name">Document - Employé</field>
+      <field name="model_id" ref="model_bamba_document"/>
+      <field name="domain_force">
+        ['|',
+          ('request_id.requester_id', '=', user.id),
+          ('uploaded_by', '=', user.id)
+        ]
+      </field>
+      <field name="groups" eval="[(4, ref('bamba_base.group_bamba_employee'))]"/>
+    </record>
+
+    <!-- CHEF DE PROJET -->
+
+
+    <!-- MANAGER -->
+    <record id="rule_document_manager_all" model="ir.rule">
+      <field name="name">Document - Manager</field>
+      <field name="model_id" ref="model_bamba_document"/>
+      <field name="domain_force">[(1,'=',1)]</field>
+      <field name="groups" eval="[(4, ref('bamba_base.group_bamba_manager'))]"/>
+    </record>
+
+  </data>
+</odoo>

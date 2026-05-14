@@ -1,0 +1,9 @@
+<odoo>
+    <report
+        id="project_report"
+        model="project.project"
+        string="Rapport Chantier"
+        report_type="qweb-pdf"
+        name="bamba_project.report_template"
+    />
+</odoo>

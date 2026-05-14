@@ -1,0 +1,20 @@
+<odoo>
+    <record id="action_bamba_request" model="ir.actions.act_window">
+        <field name="name">Demandes</field>
+        <field name="res_model">bamba.request</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_bamba_request_template" model="ir.actions.act_window">
+        <field name="name">Modèles de Validation</field>
+        <field name="res_model">bamba.request.template</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="bamba_root" name="Bamba" sequence="10"/>
+    <menuitem id="bamba_request_menu_category" name="Demandes" parent="bamba_root" sequence="10"/>
+    <menuitem id="menu_bamba_request_action" name="Toutes les Demandes" parent="bamba_request_menu_category" action="action_bamba_request" sequence="10"/>
+    
+    <menuitem id="menu_bamba_config" name="Configuration" parent="bamba_root" sequence="100"/>
+    <menuitem id="menu_bamba_request_template" name="Modèles de circuits" parent="menu_bamba_config" action="action_bamba_request_template"/>
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <record id="seq_bamba_request" model="ir.sequence">
+        <field name="name">Demande Bamba</field>
+        <field name="code">bamba.request</field>
+        <field name="prefix">DEMANDE-%(year)s-</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_bamba_request_form_inherit_communication" model="ir.ui.view">
+        <field name="name">bamba.request.form.communication</field>
+        <field name="model">bamba.request</field>
+        <field name="inherit_id" ref="bamba_request.view_bamba_request_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+    <notebook>
+        <page string="Communication interne">
+             <field name="message_ids" context="{'default_request_id': id}">
+                 <list editable="bottom">
+                     <field name="name"/>
+                     <field name="author_id"/>
+                     <field name="state"/>
+                 </list>
+             </field>
+        </page>
+    </notebook>
+</xpath>
+
+        </field>
+    </record>
+</odoo>

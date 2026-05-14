@@ -1,0 +1,9 @@
+<odoo>
+  <record id="seq_bamba_client" model="ir.sequence">
+    <field name="name">Bamba Client</field>
+    <field name="code">bamba.client</field>
+    <field name="prefix">BAM-</field>
+    <field name="padding">5</field>
+    <field name="number_next">1</field>
+  </record>
+</odoo>

@@ -1,0 +1,45 @@
+<odoo>
+  <data noupdate="1">
+
+    <record id="rule_request_employee_own" model="ir.rule">
+        <field name="name">Demande - Employé : mes demandes</field>
+        <field name="model_id" ref="bamba_request.model_bamba_request"/>
+        <field name="domain_force">[('requester_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('bamba_base.group_bamba_employee'))]"/>
+    </record>
+
+    <record id="rule_request_manager" model="ir.rule">
+      <field name="name">Demande - Manager : visibilité étendue</field>
+      <field name="model_id" ref="bamba_request.model_bamba_request"/>
+      <field name="domain_force">
+        ['|', '|',
+          ('requester_id', '=', user.id),
+          ('department_id', '=', user.department_id.id),
+          ('validation_line_ids.user_id', '=', user.id)
+        ]
+      </field>
+      <field name="groups" eval="[(4, ref('bamba_base.group_bamba_manager'))]"/>
+    </record>
+
+    <record id="rule_request_finance_all" model="ir.rule">
+      <field name="name">Demande - Finance : toutes</field>
+      <field name="model_id" ref="bamba_request.model_bamba_request"/>
+      <field name="domain_force">[(1,'=',1)]</field>
+      <field name="groups" eval="[(4, ref('bamba_base.group_bamba_finance'))]"/>
+    </record>
+
+    <record id="rule_request_chef_projet" model="ir.rule">
+        <field name="name">Demande - Chef de projet : visibilité projet</field>
+        <field name="model_id" ref="bamba_request.model_bamba_request"/>
+        <field name="domain_force">
+            ['|', '|',
+                ('requester_id', '=', user.id),
+                ('project_manager_id', '=', user.id),
+                ('validation_line_ids.user_id', '=', user.id)
+            ]
+        </field>
+        <field name="groups" eval="[(4, ref('bamba_base.group_bamba_project_manager'))]"/>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+  <data noupdate="0">
+    <record id="project_template_chantier" model="project.project">
+      <field name="name">Template Chantier</field>
+      <field name="description">Template pour chantiers Bamba: phases et tâches initiales</field>
+      <field name="privacy_visibility">followers</field>
+    </record>
+  </data>
+</odoo>

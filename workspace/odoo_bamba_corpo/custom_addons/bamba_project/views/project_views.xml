@@ -1,0 +1,59 @@
+<odoo>
+    <record id="view_project_form_bamba" model="ir.ui.view">
+        <field name="name">project.project.form.bamba</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//header" position="inside">
+                <button name="action_start" string="Démarrer le chantier" type="object" 
+                        class="oe_highlight" invisible="state != 'draft'"/>
+                <button name="action_done" string="Terminer le chantier" type="object" 
+                        class="oe_highlight" invisible="state != 'in_progress'"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_title']" position="replace">
+                <div class="oe_title">
+                    <label for="code" string="Référence Chantier"/>
+                    <h1><field name="code" readonly="1"/></h1>
+                    <label for="name" string="Nom du Projet"/>
+                    <h2><field name="name" placeholder="Ex: Construction Villa Bamba..."/></h2>
+                </div>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_title']" position="after">
+                <group name="bamba_main_group">
+                    <group string="Informations Chantier" name="bamba_info">
+                        <field name="project_manager_id" widget="many2one_avatar_user"/>
+                        <field name="location" placeholder="Localisation..."/>
+                        <field name="department_id" options="{'no_create': True}"/>
+                    </group>
+                    <group string="Suivi Financier &amp; Planning" name="bamba_budget">
+                        <field name="budget_allocated"/>
+                        <field name="cost_spent"/>
+                        <field name="budget_remaining" font_weight="bold"/>
+                        <field name="date_start_planned"/>
+                        <field name="date_end_planned"/>
+                    </group>
+                </group>
+                <group string="Description détaillée">
+                    <field name="description" nolabel="1" placeholder="Ajoutez ici les détails du projet..."/>
+                </group>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Documents Bamba" name="bamba_documents">
+                    <field name="document_ids">
+                        <list editable="bottom">
+                            <field name="name"/>
+                            <field name="document_type"/>
+                            <field name="uploaded_by"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

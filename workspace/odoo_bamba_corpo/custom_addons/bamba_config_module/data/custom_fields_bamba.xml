@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  
+    <!-- ========================== -->
+    <record id="field_bamba_client_type" model="ir.model.fields">
+        <field name="name">x_bamba_client_type</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="field_description">Type de client</field>
+        <field name="ttype">selection</field>
+        <field name="selection">[('pro','Professionnel'),('part','Particulier')]</field>
+    </record>
+
+    <record id="field_bamba_client_segment" model="ir.model.fields">
+        <field name="name">x_bamba_client_segment</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="field_description">Segment client</field>
+        <field name="ttype">selection</field>
+        <field name="selection">[('vip','VIP'),('standard','Standard')]</field>
+    </record>
+
+    <!-- ========================== -->
+    <!-- CHAMPS PROJETS (project.project) -->
+    <!-- ========================== -->
+    <record id="field_bamba_project_budget" model="ir.model.fields">
+        <field name="name">x_bamba_project_budget</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="field_description">Budget projet</field>
+        <field name="ttype">float</field> 
+    </record>
+
+    <record id="field_bamba_project_manager" model="ir.model.fields">
+        <field name="name">x_bamba_project_manager</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="field_description">Chef de projet</field>
+        <field name="ttype">many2one</field>
+        <field name="relation">hr.employee</field>
+    </record>
+
+    <!-- Commenté temporairement -->
+    <!--
+    <record id="field_bamba_chantier_name" model="ir.model.fields">
+        <field name="name">x_bamba_chantier_name</field>
+        <field name="model_id" ref="bamba_config.bamba_chantier"/>
+        <field name="field_description">Nom du chantier</field>
+        <field name="ttype">char</field>
+    </record>
+    -->
+</odoo>

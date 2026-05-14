@@ -1,0 +1,8 @@
+<odoo>
+    <record id="seq_bamba_project" model="ir.sequence">
+        <field name="name">Bamba Projet</field>
+        <field name="code">bamba.project</field>
+        <field name="prefix">PRJ-%(year)s-</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

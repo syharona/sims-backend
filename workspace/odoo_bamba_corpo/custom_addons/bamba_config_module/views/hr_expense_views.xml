@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_expense_view_form_inherit_bamba_request" model="ir.ui.view">
+            <field name="name">hr.expense.form.inherit.bamba.request</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//header" position="inside">
+                    
+                    <button name="action_validate_chef_projet" 
+                            string="Valider (Chef Projet)" 
+                            type="object" 
+                            states="submit" 
+                            groups="bamba_corporation_custom.group_bamba_chef_projet" 
+                            class="oe_highlight"/>
+                    
+                    <button name="action_validate_manager" 
+                            string="Valider (Manager)" 
+                            type="object" 
+                            states="validated_chef_projet" 
+                            groups="bamba_corporation_custom.group_bamba_manager" 
+                            class="oe_highlight"/>
+                    
+                    <field name="state" position="attributes">
+                        <attribute name="statusbar_visible">submit,validated_chef_projet,done</attribute>
+                    </field>
+
+                </xpath>
+
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="x_numero_demande" readonly="1"/>
+                    <field name="x_departement_id"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="x_demande_category_id" string="Type et Catégorie" required="1"/>
+                    <field name="x_fournisseur_id"/>
+                    <field name="x_niveau_urgence"/>
+                </xpath>
+
+                <xpath expr="//field[@name='analytic_account_id']" position="replace">
+                    <field name="x_imputation_budgetaire_id" 
+                           string="Imputation Budgétaire (Chantier)"
+                           required="1"
+                           groups="analytic.group_analytic_accounting"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

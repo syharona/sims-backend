@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_internal_message_employee,bamba internal message employee,model_bamba_internal_message,bamba_base.group_bamba_employee,1,0,0,0
+access_internal_message_project_manager,bamba internal message project manager,model_bamba_internal_message,bamba_base.group_bamba_project_manager,1,0,1,0
+access_internal_message_manager,bamba internal message manager,model_bamba_internal_message,bamba_base.group_bamba_manager,1,1,1,1
+access_bamba_internal_message_admin,bamba.internal.message.admin,model_bamba_internal_message,base.group_user,1,1,1,1

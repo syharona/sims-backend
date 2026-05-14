@@ -1,0 +1,128 @@
+<odoo>
+  <template id="request_report_template">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+
+        <div class="page">
+
+          <!-- HEADER -->
+          <h2 style="text-align:center;">
+            DEMANDE D’APPROBATION
+          </h2>
+
+          
+
+          <table class="table table-sm">
+            <tr>
+              <td><strong>N° Demande</strong></td>
+              <td><span t-esc="o.name"/></td>
+              <td><strong>Date</strong></td>
+              <td><span t-esc="o.create_date.strftime('%d/%m/%Y')"/></td>
+            </tr>
+            <tr>
+              <td><strong>Demandeur</strong></td>
+              <td><span t-esc="o.requester_id.name"/></td>
+              <td><strong>Département</strong></td>
+              <td><span t-esc="o.department_id.name"/></td>
+            </tr>
+            <tr>
+              <td><strong>Niveau d'urgence</strong></td>
+              <td><span t-esc="dict(o._fields['urgency'].selection).get(o.urgency)"/></td>
+              <td><strong>Statut</strong></td>
+              <td><span t-esc="dict(o._fields['state'].selection).get(o.state)"/></td>
+            </tr>
+          </table>
+
+          <br/>
+
+          <!-- DEMANDE -->
+          <h4>Détails de la demande</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Libellé</th>
+                <th>PU</th>
+                <th>Qté</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span t-esc="o.description"/></td>
+                <td><span t-esc="o.unit_price"/></td>
+                <td><span t-esc="o.quantity"/></td>
+                <td><strong><span t-esc="o.total_price"/></strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br/>
+
+          <table class="table table-sm">
+            <tr>
+              <td><strong>Fournisseur</strong></td>
+              <td><span t-esc="o.supplier_id.name"/></td>
+            </tr>
+            <tr>
+              <td><strong>Imputation budgétaire</strong></td>
+              <td><span t-esc="o.analytic_account_id.name"/></td>
+            </tr>
+          </table>
+
+          <br/>
+
+          <!-- VALIDATIONS -->
+          <h4>Circuit de validation</h4>
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Rôle</th>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Signature</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>Demandeur</td>
+                <td><span t-esc="o.requester_id.name"/></td>
+                <td><span t-esc="o.create_date.strftime('%d/%m/%Y')"/></td>
+                <td>Signé</td>
+              </tr>
+
+              <tr t-if="o.manager_validator_id">
+                <td>Manager</td>
+                <td><span t-esc="o.manager_validator_id.name"/></td>
+                <td>
+                  <span t-esc="o.write_date.strftime('%d/%m/%Y')"/>
+                </td>
+                <td>Validé</td>
+              </tr>
+
+              <tr t-if="o.finance_validator_id">
+                <td>Finance</td>
+                <td><span t-esc="o.finance_validator_id.name"/></td>
+                <td>
+                  <span t-esc="o.write_date.strftime('%d/%m/%Y')"/>
+                </td>
+                <td>Validé</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <br/>
+
+          <!-- FOOTER -->
+          <p style="font-size:10px; text-align:center;">
+            Document généré automatiquement – Bamba Corporation
+          </p>
+
+        </div>
+
+      </t>
+    </t>
+  </template>
+</odoo>

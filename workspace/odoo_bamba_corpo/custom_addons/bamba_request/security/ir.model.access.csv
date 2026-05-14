@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bamba_req,bamba.req,model_bamba_request,base.group_user,1,1,1,1
+access_bamba_req_line,bamba.req.line,model_bamba_request_line,base.group_user,1,1,1,1
+access_bamba_line,bamba.line,model_bamba_request_validation_line,base.group_user,1,1,1,1
+access_bamba_tmpl,bamba.tmpl,model_bamba_request_template,bamba_base.group_bamba_manager,1,1,1,1
+access_bamba_tmpl_line,bamba.tmpl_line,model_bamba_request_template_line,bamba_base.group_bamba_manager,1,1,1,1

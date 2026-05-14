@@ -1,0 +1,12 @@
+<odoo>
+  <data>
+
+    <record id="rule_department_scope" model="ir.rule">
+      <field name="name">Bamba - Scope Département</field>
+      <field name="model_id" ref="base.model_res_partner"/>
+      <field name="domain_force">['|', ('company_id', '=', False), ('company_id', '=', user.company_id.id)]</field>
+      <field name="groups" eval="[(4, ref('group_bamba_employee'))]"/>
+    </record>
+
+  </data>
+</odoo>

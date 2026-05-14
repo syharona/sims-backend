@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bamba_request_form" model="ir.ui.view">
+        <field name="name">bamba.request.form</field>
+        <field name="model">bamba.request</field>
+        <field name="arch" type="xml">
+            <form string="Demande">
+                <header>
+                    <button name="action_submit" type="object"
+                            invisible="state != 'draft' or requester_id != uid"
+                            string="Soumettre" class="oe_highlight"/>
+                    <button name="action_approve_step" type="object"
+                            invisible="state != 'to_approve' or current_validator_id != uid"
+                            string="Approuver l'étape" class="oe_highlight"/>
+                    <button name="action_reject" type="object"
+                            invisible="state != 'to_approve' or current_validator_id != uid"
+                            string="Rejeter"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,to_approve,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Demandeur">
+                            <field name="requester_id" readonly="state != 'draft' or requester_id != uid"/>
+                            <field name="project_id" readonly="state != 'draft' or requester_id != uid"
+                                   options="{'no_create': True}"/>
+                            <field name="project_manager_id" readonly="state != 'draft' or requester_id != uid"
+                                   options="{'no_create': True}"/>
+                            <field name="department_id" readonly="state != 'draft' or requester_id != uid"/>
+                            <field name="urgency" widget="priority" readonly="state != 'draft' or requester_id != uid"/>
+                        </group>
+                        <group string="Budget">
+                            <field name="total_price" readonly="1"
+                                   class="oe_subtotal_footer_separator"/>
+                            <field name="analytic_account_id"
+                                   groups="bamba_base.group_bamba_finance"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Lignes de demande">
+                            <field name="line_ids" readonly="state != 'draft' or requester_id != uid">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="description"/>
+                                    <field name="supplier_id"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="subtotal" readonly="1"/>
+                                </list>
+                            </field>
+                            <group class="oe_subtotal_footer">
+                                <field name="total_price" readonly="1"
+                                       string="Total général"/>
+                            </group>
+                        </page>
+                        <page string="Circuit de Validation">
+                            <group>
+                                <field name="template_id" options="{'no_create': True}"
+                                       invisible="state != 'draft'"/>
+                                <field name="current_validator_id"
+                                       invisible="state != 'to_approve'"/>
+                            </group>
+                            <field name="validation_line_ids" readonly="state != 'draft' or requester_id != uid">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="user_id"/>
+                                    <field name="state" widget="badge"
+                                           decoration-success="state == 'approved'"/>
+                                    <field name="validation_date"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_bamba_request_template_form" model="ir.ui.view">
+        <field name="name">bamba.request.template.form</field>
+        <field name="model">bamba.request.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" placeholder="Ex: Circuit Direction Générale"/>
+                    </group>
+                    <field name="line_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="user_id"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

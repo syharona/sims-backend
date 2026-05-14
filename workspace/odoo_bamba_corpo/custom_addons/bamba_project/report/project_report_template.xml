@@ -1,0 +1,10 @@
+<odoo>
+    <template id="report_template">
+        <t t-call="web.basic_layout">
+            <h2>Chantier : <t t-esc="o.name"/></h2>
+            <p>Chef de projet : <t t-esc="o.project_manager_id.name"/></p>
+            <p>Budget : <t t-esc="o.budget_allocated"/></p>
+            <p>Restant : <t t-esc="o.budget_remaining"/></p>
+        </t>
+    </template>
+</odoo>

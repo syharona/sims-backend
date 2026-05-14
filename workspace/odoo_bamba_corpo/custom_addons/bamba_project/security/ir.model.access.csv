@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_employee_bamba,project.employee.bamba,project.model_project_project,bamba_base.group_bamba_employee,1,0,0,0
+access_project_manager_bamba,project.manager.bamba,project.model_project_project,bamba_base.group_bamba_project_manager,1,1,1,0
+access_project_admin_bamba,project.admin.bamba,project.model_project_project,bamba_base.group_bamba_manager,1,1,1,1

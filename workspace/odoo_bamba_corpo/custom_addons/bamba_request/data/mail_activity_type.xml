@@ -1,0 +1,8 @@
+<odoo>
+    <record id="activity_bamba_request_validation" model="mail.activity.type">
+        <field name="name">Validation demande</field>
+        <field name="summary">Demande à valider</field>
+        <field name="res_model">bamba.request</field>
+        <field name="icon">fa-check-square-o</field>
+    </record>
+</odoo>

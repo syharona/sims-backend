@@ -1,0 +1,10 @@
+<odoo>
+    <record id="request_project_link_rule" model="ir.rule">
+        <field name="name">Accès demandes avec projet</field>
+        <field name="model_id" ref="bamba_request.model_bamba_request"/>
+        <field name="domain_force">
+            ['|', ('project_id', '=', False), ('project_id', '!=', False)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

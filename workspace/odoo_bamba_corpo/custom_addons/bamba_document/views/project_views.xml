@@ -1,0 +1,24 @@
+<odoo>
+  <record id="view_project_form_documents" model="ir.ui.view">
+    <field name="name">project.project.form.documents</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.edit_project"/>
+    <field name="arch" type="xml">
+
+      <xpath expr="//notebook" position="inside">
+        <page string="Documents">
+          <field name="bamba_document_ids" context="{'default_project_id': id}">
+            <list editable="bottom">
+              <field name="name"/>
+              <field name="document_type"/>
+              <field name="file" widget="binary" filename="filename"/>
+              <field name="filename" column_invisible="True"/>
+              <field name="uploaded_by" readonly="1"/>
+            </list>
+          </field>
+        </page>
+      </xpath>
+
+    </field>
+  </record>
+</odoo>

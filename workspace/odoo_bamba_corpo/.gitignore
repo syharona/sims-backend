@@ -1,0 +1,17 @@
+# Odoo source folder (do not commit)
+odoo/
+
+# Python env
+venv/
+odoo-env/
+
+# Cache
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/

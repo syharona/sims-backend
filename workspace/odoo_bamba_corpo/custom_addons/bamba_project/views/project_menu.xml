@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem id="bamba_project_root"
+              name="Projets &amp; Chantiers"
+              sequence="40"/>
+
+    <menuitem id="bamba_project_menu"
+              name="Projets"
+              parent="bamba_project_root"
+              action="project.open_view_project_all"
+              sequence="1"/>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+
+    <record id="project_form_request_link" model="ir.ui.view">
+        <field name="name">project.project.form.request.link</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//sheet" position="inside">
+                <group string="Demande d'origine">
+                    <field name="id" invisible="1"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

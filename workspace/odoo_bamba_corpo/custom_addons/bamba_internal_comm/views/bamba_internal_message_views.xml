@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_bamba_internal_message_form" model="ir.ui.view">
+        <field name="name">bamba.internal.message.form</field>
+        <field name="model">bamba.internal.message</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_send"
+                            type="object"
+                            string="Envoyer"
+                            invisible="state != 'draft'"
+                            class="btn-primary"/>
+                    
+                    <button name="action_archive"
+                            type="object"
+                            string="Archiver"
+                            invisible="state != 'sent'"/>
+                            
+                    <field name="state" widget="statusbar"/>
+                </header>
+
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="author_id"/>
+                        <field name="request_id"/>
+                        <field name="project_id"/>
+                    </group>
+                    <group>
+                        <field name="body" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    </odoo>

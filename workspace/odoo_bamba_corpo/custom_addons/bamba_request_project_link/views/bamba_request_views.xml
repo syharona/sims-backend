@@ -1,0 +1,30 @@
+<odoo>
+    <record id="bamba_request_form_project_link" model="ir.ui.view">
+        <field name="name">bamba.request.form.project.link</field>
+        <field name="model">bamba.request</field>
+        <field name="inherit_id" ref="bamba_request.view_bamba_request_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//header" position="inside">
+                <button name="action_create_project" string="Créer le projet" type="object" 
+                        class="oe_highlight" invisible="state != 'approved' or project_id != False"/>
+            </xpath>
+
+            <xpath expr="//sheet" position="inside">
+    <div class="oe_button_box" name="button_box">
+        <button class="oe_stat_button" 
+                type="object" 
+                name="action_view_project" 
+                icon="fa-tasks" 
+                invisible="project_count == 0">
+            <div class="o_field_widget o_stat_info">
+                <span class="o_stat_value"><field name="project_count"/></span>
+                <span class="o_stat_text">Projet</span>
+            </div>
+        </button>
+    </div>
+</xpath>
+
+        </field>
+    </record>
+</odoo>
